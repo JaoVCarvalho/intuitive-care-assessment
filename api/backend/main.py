@@ -1,7 +1,17 @@
 from fastapi import FastAPI, Query
 from services.search import search_by_name, search_by_ans_code, search_by_cnpj
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+# Adicione o middleware de CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["http://localhost:5173"],
+    allow_headers=["http://localhost:5173"],
+)
 
 @app.get("/search/name", summary="Search operators by name")
 def search_name(query: str = Query(..., description="Text to match against operator names")):
