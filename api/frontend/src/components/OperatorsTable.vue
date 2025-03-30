@@ -78,7 +78,7 @@
     },
     watch: {
       results() {
-        this.currentPage = 1; // volta pra primeira página quando os resultados mudarem
+        this.currentPage = 1; 
       },
     },
   };

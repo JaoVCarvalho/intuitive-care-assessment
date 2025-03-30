@@ -19,7 +19,8 @@ if __name__ == "__main__":
             print("No matching PDF files were found.")
         else:
             files = download_pdf(links)
-            zip_files(files, "files/annexes_bundle.zip")
+            if not zip_files(files, "files/annexes_bundle.zip"):
+                print("Failed to create ZIP file.")
     except Exception as e:
         print("Error in run_scraping.py: ", str(e))
 
