@@ -1,4 +1,4 @@
-from scraping.services.annex_scraper import get_pdf_links, download_pdf, DOWNLOAD_DIR
+from scraping.services.scraper_service import get_pdf_links, download_pdf, DOWNLOAD_DIR
 from data_transformation.services.cleaner import clean_dataframe
 from data_transformation.services.mapper import replace_siglas
 from utils.file_utils import zip_files
