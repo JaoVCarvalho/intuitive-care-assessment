@@ -1,3 +1,6 @@
+--  Queries para importar o conteúdo dos arquivos preparados
+-- No comando INFILE, substitua pelo caminho correspondente ao arquivo CSV
+
 LOAD DATA LOCAL INFILE 'database/files/operators/Relatorio_cadop.csv'
 INTO TABLE operators
 CHARACTER SET utf8mb4

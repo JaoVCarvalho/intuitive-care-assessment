@@ -1,5 +1,19 @@
-from data_transformation.services.transformation_service import get_anexo_i_pdf_path, extract_tables_from_pdf, clean_dataframe, replace_siglas
+from data_transformation.services.data_transformation_service import get_anexo_i_pdf_path, extract_tables_from_pdf, clean_dataframe, replace_siglas
 from utils.file_utils import zip_files
+
+"""
+run_data_transformation.py
+---------------------
+Script principal responsável pela extração, transformação e exportação dos dados da Tabela Rol de Procedimentos.
+
+Este script:
+  - Garante que o PDF do Anexo I esteja disponível localmente via get_anexo_i_pdf_path()
+  - Extrai todas as tabelas do documento PDF usando pdfplumber com extract_tables_from_pdf()
+  - Realiza a limpeza de dados (remoção de quebras de linha e espaços) com clean_dataframe()
+  - Substitui siglas (OD e AMB) pelas descrições completas via replace_siglas()
+  - Exporta os dados estruturados para um arquivo CSV
+  - Compacta o CSV gerado em um arquivo .zip com zip_files()
+"""
 
 if __name__ == "__main__":
 

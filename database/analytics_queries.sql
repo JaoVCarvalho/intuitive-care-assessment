@@ -1,3 +1,8 @@
+-- Querys Analíticas
+
+
+-- Quais as 10 operadoras com maiores despesas em "EVENTOS/ SINISTROS CONHECIDOS OU AVISADOS DE ASSISTÊNCIA A SAÚDE MEDICO HOSPITALAR"
+-- no último trimestre?
 SELECT
     fr.ans_code,
     o.corporate_name AS health_operator,
@@ -13,6 +18,7 @@ LIMIT 10;
 
 --
 
+-- Quais as 10 operadoras com maiores despesas nessa categoria no último ano?
 SELECT
     fr.ans_code,
     o.corporate_name AS health_operator,
@@ -20,11 +26,11 @@ SELECT
 FROM financial_reports fr
 JOIN operators o ON fr.ans_code = o.ans_code
 WHERE
-    fr.reference_date BETWEEN '2024-01-01' AND '2024-12-31'
---    fr.reference_date BETWEEN
---		STR_TO_DATE(CONCAT(YEAR(CURDATE()) - 1, '-01-01'), '%Y-%m-%d')
---		AND
---		STR_TO_DATE(CONCAT(YEAR(CURDATE()) - 1, '-12-31'), '%Y-%m-%d')
+--    fr.reference_date BETWEEN '2024-01-01' AND '2024-12-31'
+    fr.reference_date BETWEEN
+		STR_TO_DATE(CONCAT(YEAR(CURDATE()) - 1, '-01-01'), '%Y-%m-%d')
+		AND
+		STR_TO_DATE(CONCAT(YEAR(CURDATE()) - 1, '-12-31'), '%Y-%m-%d')
     AND fr.account_description = "EVENTOS/ SINISTROS CONHECIDOS OU AVISADOS  DE ASSISTÊNCIA A SAÚDE MEDICO HOSPITALAR "
 GROUP BY fr.ans_code, o.corporate_name
 ORDER BY total_expense DESC

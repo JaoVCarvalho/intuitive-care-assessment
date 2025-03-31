@@ -1,7 +1,10 @@
+-- Queries para estruturar as tabelas necessárias para os arquivos CSV
+
 CREATE DATABASE IF NOT EXISTS ans_data CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 USE ans_data;
 
+-- Demonstrações contábeis
 CREATE TABLE financial_reports (
     id INT AUTO_INCREMENT PRIMARY KEY,
     reference_date DATE NOT NULL,
@@ -12,6 +15,7 @@ CREATE TABLE financial_reports (
     final_balance NUMERIC(15,2)
 );
 
+-- Dados cadastrais da operadores ativas na ANS
 CREATE TABLE operators (
     ans_code INT PRIMARY KEY,
     cnpj VARCHAR(18) NOT NULL,
