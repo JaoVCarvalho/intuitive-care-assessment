@@ -1,6 +1,7 @@
 <template>
-    <div class="table-wrapper">
-      <table v-if="paginatedResults.length">
+  <div class="table-wrapper">
+    <div class="scroll-area" v-if="paginatedResults.length">
+      <table>
         <thead>
           <tr>
             <th>ANS Code</th>
@@ -28,18 +29,19 @@
           </tr>
         </tbody>
       </table>
-  
-      <div v-else class="no-results">
-        Nenhum resultado encontrado.
-      </div>
-  
-      <div class="pagination" v-if="totalPages > 1">
-        <button :disabled="currentPage === 1" @click="prevPage">Anterior</button>
-        <span>Página {{ currentPage }} de {{ totalPages }}</span>
-        <button :disabled="currentPage === totalPages" @click="nextPage">Próxima</button>
-      </div>
     </div>
-  </template>
+
+    <div v-else class="no-results">
+      Nenhum resultado encontrado.
+    </div>
+
+    <div class="pagination" v-if="totalPages > 1">
+      <button :disabled="currentPage === 1" @click="prevPage">Anterior</button>
+      <span>Página {{ currentPage }} de {{ totalPages }}</span>
+      <button :disabled="currentPage === totalPages" @click="nextPage">Próxima</button>
+    </div>
+  </div>
+</template>
   
   <script>
   export default {
@@ -86,11 +88,21 @@
   
   <style scoped>
   .table-wrapper {
-    overflow-x: auto;
+    position: relative;
     margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .scroll-area {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 1rem; 
   }
   
   table {
+    min-width: 900px;
     width: 100%;
     border-collapse: collapse;
   }
@@ -116,8 +128,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1rem;
     gap: 1rem;
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
   }
   
   button[disabled] {

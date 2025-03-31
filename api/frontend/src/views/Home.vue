@@ -7,15 +7,15 @@
       <OperatorsTable :results="results" />
     </div>
   </template>
-  <!-- "@/components/SearchBar.vue" -->
+
   <script>
-  import SearchBar from "../components/SearchBar.vue";
-  import OperatorsTable from "../components/OperatorsTable.vue";
+  import SearchBar from "@/components/SearchBar.vue";
+  import OperatorsTable from "@/components/OperatorsTable.vue";
   import {
     searchByName,
     searchByAnsCode,
     searchByCnpj,
-  } from "../services/api.js";
+  } from "@/services/api.js";
   
   export default {
     name: "Home",
