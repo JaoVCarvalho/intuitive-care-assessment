@@ -1,5 +1,5 @@
-const BASE_URL = "http://127.0.0.1:8000"; 
-
+const BASE_URL = "http://127.0.0.1:8000";
+ 
 export async function searchByName(query) {
   try {
     const response = await fetch(`${BASE_URL}/search/name?query=${encodeURIComponent(query)}`);

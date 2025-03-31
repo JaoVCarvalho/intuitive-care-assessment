@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "d75ca7bf-287b-4c8b-9120-4ed292b102ed",
+		"name": "intuitive-care-assessment",
+		"description": "### **Coleção para consulta de operadoras de saúde registradas na ANS.**\n\nEsta coleção contém requisições para buscar operadoras por nome, código ANS ou CNPJ, demonstrando o funcionamento da API desenvolvida para o teste técnico.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43572142",
+		"_collection_link": "https://lively-flare-7209017.postman.co/workspace/Jo%C3%A3o-Victor-Carvalho's-Workspac~6a0cf940-5535-47eb-89d3-1ae55b4dedaf/collection/43572142-d75ca7bf-287b-4c8b-9120-4ed292b102ed?action=share&source=collection_link&creator=43572142"
+	},
+	"item": [
+		{
+			"name": "search_name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search/name?query=unimed",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search",
+						"name"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "unimed"
+						},
+						{
+							"key": "query",
+							"value": "UNIMED CERRADO",
+							"disabled": true
+						},
+						{
+							"key": "query",
+							"value": "SAÚDE",
+							"disabled": true
+						},
+						{
+							"key": "query",
+							"value": "FLORIANÓPOLIS",
+							"disabled": true
+						},
+						{
+							"key": "query",
+							"value": "florianópolis ",
+							"disabled": true
+						},
+						{
+							"key": "query",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search_by_ans_code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search/ans-code?query=42",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search",
+						"ans-code"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "42"
+						},
+						{
+							"key": "query",
+							"value": "420093",
+							"disabled": true
+						},
+						{
+							"key": "query",
+							"value": "43",
+							"disabled": true
+						},
+						{
+							"key": "query",
+							"value": "00",
+							"disabled": true
+						},
+						{
+							"key": "query",
+							"value": "000",
+							"disabled": true
+						},
+						{
+							"key": "query",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search_by_cnpj",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search/cnpj?query=43",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search",
+						"cnpj"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "43"
+						},
+						{
+							"key": "query",
+							"value": "436073",
+							"disabled": true
+						},
+						{
+							"key": "query",
+							"value": "43607343000121",
+							"disabled": true
+						},
+						{
+							"key": "query",
+							"value": "00",
+							"disabled": true
+						},
+						{
+							"key": "query",
+							"value": "000",
+							"disabled": true
+						},
+						{
+							"key": "query",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
